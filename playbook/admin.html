@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Playbook – Admin</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+</head>
+<body class="h-screen flex overflow-hidden bg-gray-100 text-gray-900">
+  <div class="w-1/4 h-full bg-green-700 text-white flex flex-col items-center py-10">
+    <img src="../images/logo.png" alt="CareerCraft Logo" class="w-[150px] h-[150px] mb-6">
+    <h1 class="text-xl font-bold mb-6">CareerCraft</h1>
+    
+<nav class="flex flex-col space-y-3 text-lg" x-data="{ open: '' }" x-cloak>
+  <div>
+    <button @click="open = open === 'Dashboard' ? '' : 'Dashboard'" class="text-left w-full hover:text-green-300 font-semibold">Dashboard</button>
+    <div x-show="open === 'Dashboard'" class="ml-4 text-sm space-y-1 pt-1">
+      <a href="../dashboard/dashboard.html" class="text-green-300 font-semibold hover:text-green-400 block">Home</a>
+      <a href="../dashboard/matching.html" class="text-green-300 font-semibold hover:text-green-400 block">Matching</a>
+      <a href="../dashboard/outreach.html" class="text-green-300 font-semibold hover:text-green-400 block">Outreach</a>
+    </div>
+  </div>
+  <template x-for="section in [
+    { name: 'Candidate', path: 'candidate' },
+    { name: 'Position', path: 'position' },
+    { name: 'Journal', path: 'journal' },
+    { name: 'Process', path: 'process' },
+    { name: 'Playbook', path: 'playbook' }
+  ]">
+    <div>
+      <button @click="open = open === section.name ? '' : section.name" x-text="section.name" class="text-left w-full hover:text-green-300 font-semibold"></button>
+      <div x-show="open === section.name" class="ml-4 text-sm space-y-1 pt-1">
+        <a :href="'../' + section.path + '/viewer.html'" class="text-green-300 font-semibold hover:text-green-400 block">Viewer</a>
+        <a :href="'../' + section.path + '/editor.html'" class="text-green-300 font-semibold hover:text-green-400 block">Editor</a>
+        <a :href="'../' + section.path + '/admin.html'" class="text-green-300 font-semibold hover:text-green-400 block">Admin</a>
+      </div>
+    </div>
+  </template>
+</nav>
+
+  </div>
+
+  <div class="w-3/4 p-10 overflow-y-auto">
+    <h2 class="text-2xl font-bold text-green-700 mb-6">Playbook – Admin</h2>
+
+    <h2 class="text-2xl font-bold text-green-700 mb-6">Search</h2>
+    <div class="grid grid-cols-2 gap-4 mb-6">
+      <input type="text" placeholder="Playbook Name" class="p-2 border rounded" />
+      <input type="text" placeholder="Playbook Tags" class="p-2 border rounded" />
+    </div>
+    <div class="w-full mb-6">
+      <button class="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700">Search</button>
+    </div>
+
+    <h2 class="text-2xl font-bold text-green-700 mb-6">Results</h2>
+
+    <div class="mb-6">
+      <div class="flex items-center space-x-6">
+        <span><strong>Playbook Name: </strong> Financial - Manager </span>
+      </div>
+    </div>
+	
+    <div class="bg-white rounded shadow p-4 mb-6 space-x-2">
+	<tr class="border-t">
+  <td class="p-2 font-semibold"> Financial - Manager    </td>
+  <td class="p-2 space-x-1"><button class="text-white px-2 py-1 text-xs rounded bg-blue-600 hover:bg-blue-700" title="Pending">Email Candidate</button> <button class="text-white px-2 py-1 text-xs rounded bg-blue-600 hover:bg-blue-700" title="Pending">Review JD</button> <button class="text-white px-2 py-1 text-xs rounded bg-blue-600 hover:bg-blue-700" title="Pending">Review CV</button> <button class="text-white px-2 py-1 text-xs rounded bg-blue-600 hover:bg-blue-700" title="Pending">Schedule Interview</button> <button class="text-white px-2 py-1 text-xs rounded bg-blue-600 hover:bg-blue-700" title="Pending">Generate Plan</button></td>
+</tr>
+	</div>
+    
+<div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+  <button class="px-4 py-2 bg-green-700 text-white rounded hover:bg-green-800">Save Changes</button>
+  <div class="flex items-center space-x-4">
+    <div class="flex items-center space-x-2">
+      <label for="visual" class="text-sm font-semibold">Add Step:</label>
+      <select id="visual" class="p-2 border rounded">
+        <option>Review CV</option>
+        <option>Review JD</option>
+        <option>Schedule Interview</option>
+        <option>Create Plan</option>
+        <option>Contact Client</option>
+        <option>Contact Candidate</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+
+    <div class="mt-10 flex justify-around text-base text-green-700 font-semibold bg-gray-200 py-4 rounded">
+      <a href="../landing/settings.html" class="hover:underline">Settings</a>
+      <a href="../landing/contact.html" class="hover:underline">Contact Us</a>
+      <a href="../landing/signin.html" class="hover:underline">Sign Out</a>
+    </div>
+  </div>
+</body>
+</html>

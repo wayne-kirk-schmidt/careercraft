@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CareerCraft</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="h-screen flex overflow-hidden bg-gray-100 text-gray-900">
+  
+<div class="w-1/4 h-full bg-green-700 text-white flex flex-col items-center py-10">
+  <img src="../images/logo.png" alt="CareerCraft Logo" class="w-[150px] h-[150px] mb-6">
+  <h1 class="text-xl font-bold mb-6">CareerCraft</h1>
+  
+<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+<nav class="flex flex-col space-y-3 text-lg" x-data="{ open: '' }" x-cloak>
+  <div>
+    <button @click="open = open === 'Dashboard' ? '' : 'Dashboard'" class="text-left w-full hover:text-green-300 font-semibold">Dashboard</button>
+    <div x-show="open === 'Dashboard'" class="ml-4 text-sm space-y-1 pt-1">
+      <a href="../dashboard/dashboard.html" class="text-green-300 font-semibold hover:text-green-400 block">Home</a>
+      <a href="../dashboard/matching.html" class="text-green-300 font-semibold hover:text-green-400 block">Matching</a>
+      <a href="../dashboard/outreach.html" class="text-green-300 font-semibold hover:text-green-400 block">Outreach</a>
+    </div>
+  </div>
+
+  <template x-for="section in [
+    { name: 'Candidate', path: 'candidate' },
+    { name: 'Position', path: 'position' },
+    { name: 'Journal', path: 'journal' },
+    { name: 'Process', path: 'process' },
+    { name: 'Playbook', path: 'playbook' }
+  ]">
+    <div>
+      <button @click="open = open === section.name ? '' : section.name" x-text="section.name" class="text-left w-full hover:text-green-300 font-semibold"></button>
+      <div x-show="open === section.name" class="ml-4 text-sm space-y-1 pt-1">
+        <a :href="'../' + section.path + '/viewer.html'" class="text-green-300 font-semibold hover:text-green-400 block">Viewer</a>
+        <a :href="'../' + section.path + '/editor.html'" class="text-green-300 font-semibold hover:text-green-400 block">Editor</a>
+        <a :href="'../' + section.path + '/admin.html'" class="text-green-300 font-semibold hover:text-green-400 block">Admin</a>
+      </div>
+    </div>
+  </template>
+</nav>
+
+
+</div>
+
+  <div class="w-3/4 p-10 overflow-y-auto">
+    <div class="max-w-4xl mx-auto">
+    <h2 class="text-3xl font-bold text-green-700 mb-6">Manage Payment Options</h2>
+
+    <div class="mb-8">
+      <label for="recurring" class="block text-sm font-semibold text-gray-700 mb-1">Enable Recurring Payments?</label>
+      <select id="recurring" class="w-full p-2 border rounded">
+        <option value="yes">Yes – make my plan recurring</option>
+        <option value="no">No – pay once only</option>
+      </select>
+    </div>
+
+    <div class="mb-8">
+      <label for="billing-cycle" class="block text-sm font-semibold text-gray-700 mb-1">Recurring Billing Cycle</label>
+      <select id="billing-cycle" class="w-full p-2 border rounded">
+        <option value="monthly">Every Month</option>
+        <option value="quarterly">Every 3 Months</option>
+        <option value="yearly">Yearly (10% discount)</option>
+      </select>
+    </div>
+
+    <h3 class="text-xl font-semibold text-gray-800 mb-4">Select Payment Method</h3>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+      <div class="border p-6 rounded shadow bg-white">
+        <h4 class="text-lg font-bold mb-2">Credit Card</h4>
+        <p class="text-sm text-gray-600 mb-4">Visa, MasterCard or AMEX.</p>
+        <button class="w-full bg-green-700 text-white py-2 rounded hover:bg-green-800">Use Credit Card</button>
+      </div>
+      <div class="border p-6 rounded shadow bg-white">
+        <h4 class="text-lg font-bold mb-2">PayPal</h4>
+        <p class="text-sm text-gray-600 mb-4">Checkout using your PayPal account.</p>
+        <button class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">Use PayPal</button>
+      </div>
+      <div class="border p-6 rounded shadow bg-white">
+        <h4 class="text-lg font-bold mb-2">Stripe</h4>
+        <p class="text-sm text-gray-600 mb-4">Secure Stripe checkout integration.</p>
+        <button class="w-full bg-purple-600 text-white py-2 rounded hover:bg-purple-700">Use Stripe</button>
+      </div>
+    </div>
+  </div>
+    
+<div class="mt-10 flex justify-around text-base text-green-700 font-semibold bg-gray-200 py-4 rounded">
+  <a href="./settings.html" class="hover:underline">Settings</a>
+  <a href="./contact.html" class="hover:underline">Contact Us</a>
+  <a href="./signin.html" class="hover:underline">Sign Out</a>
+</div>
+
+  </div>
+</body>
+</html>
