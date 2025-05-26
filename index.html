@@ -1,49 +1,90 @@
+<!--
+Author: Wayne Schmidt
+Email: wayne.kirk.schmidt@gmail.com
+Profile: https://www.linkedin.com/in/waynekirkschmidt/
+License: Apache 2.0
+Repository: https://github.com/wayne-kirk-schmidt/careercraft
+-->
+<!--
+CareerCraft UI Module
+Section: Index
+Description: Standardized, styled, and auto-formatted HTML layout.
+Linked: ./css/style.css and ./js/app.js
+-->
+<!--
+Explanation: uses canned data, and does the following
++ Error Handling:
++ Inputs:
++ Outputs:
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CareerCraft</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+    CareerCraft
+  </title>
+  </script>
+  <link href="./css/style.css" rel="stylesheet"/>
+  <script src="./js/app.js">
+  </script>
 </head>
 <body class="h-screen flex overflow-hidden bg-gray-100 text-gray-900">
-  
-<div class="w-1/4 h-full bg-green-700 text-white flex flex-col items-center py-10">
-  <img src="./images/logo.png" alt="CareerCraft Logo" class="w-[150px] h-[150px] mb-6">
-  <h1 class="text-xl font-bold mb-10">CareerCraft</h1>
-  <nav class="flex flex-col space-y-4 text-lg">
-    <a href="./index.html" class="hover:text-green-300">Home</a>
-    <a href="./landing/signup.html" class="hover:text-green-300">Sign Up</a>
-    <a href="./landing/signin.html" class="hover:text-green-300">Sign In</a>
-    <a href="./landing/contact.html" class="hover:text-green-300">Contact</a>
-  </nav>
-</div>
-
-  <div class="w-3/4 p-10 overflow-y-auto">
-    <h2 class="text-4xl font-bold text-green-700 mb-4">Welcome to CareerCraft!</h2>
-<p class="text-xl mb-6 text-gray-800">Finding the perfect matches between Expertise and Opportunity</p>
-<div class="flex space-x-4">
-  <a href="./landing/signup.html" class="bg-green-700 text-white px-6 py-3 rounded hover:bg-green-800">Get Started</a>
-  <button onclick="toggleModal('infoModal')" class="border border-green-700 text-green-700 px-6 py-3 rounded hover:bg-green-100">Learn More</button>
-</div>
-
-<!-- Modal -->
-<div id="infoModal" class="fixed inset-0 z-50 hidden bg-black bg-opacity-50 flex items-center justify-center">
-  <div class="bg-white rounded-lg shadow-lg p-6 max-w-lg w-full">
-    <h3 class="text-xl font-bold text-green-700 mb-4">What is CareerCraft?</h3>
-    <p class="text-gray-700 mb-6">
-      CareerCraft uses AI to match job descriptions with candidate profiles, helping recruiters find perfect fits faster.
-    </p>
-    <button onclick="toggleModal('infoModal')" class="px-4 py-2 bg-green-700 text-white rounded hover:bg-green-800">Close</button>
+  <div class="w-1/4 h-full bg-green-700 text-white flex flex-col items-center py-10">
+    <img alt="CareerCraft Logo" class="w-[150px] h-[150px] mb-6" src="./images/logo.png"/>
+    <h1 class="text-xl font-bold mb-10">
+      CareerCraft
+    </h1>
+    <nav class="flex flex-col space-y-4 text-lg">
+      <a class="hover:text-green-300" href="./index.html">
+        Home
+      </a>
+      <a class="hover:text-green-300" href="./landing/signup.html">
+        Sign Up
+      </a>
+      <a class="hover:text-green-300" href="./landing/signin.html">
+        Sign In
+      </a>
+      <a class="hover:text-green-300" href="./landing/contact.html">
+        Contact
+      </a>
+    </nav>
   </div>
-</div>
-
-<script>
-function toggleModal(id) {
-  const modal = document.getElementById(id);
-  modal.classList.toggle("hidden");
-}
-</script>
+  <div class="w-3/4 p-10 overflow-y-auto">
+    <h2 class="text-4xl font-bold text-green-700 mb-4">
+      Welcome to CareerCraft!
+    </h2>
+    <p class="text-xl mb-6 text-gray-800">
+      Finding the perfect matches between Expertise and Opportunity
+    </p>
+    <div class="flex space-x-4">
+      <a class="bg-green-700 text-white px-6 py-3 rounded hover:bg-green-800" href="./landing/signup.html">
+        Get Started
+      </a>
+      <button class="border border-green-700 text-green-700 px-6 py-3 rounded hover:bg-green-100" onclick="toggleModal('infoModal')">
+        Learn More
+      </button>
+    </div>
+    <div class="fixed inset-0 z-50 hidden bg-black bg-opacity-50 flex items-center justify-center" id="infoModal">
+      <div class="bg-white rounded-lg shadow-lg p-6 max-w-lg w-full">
+        <h3 class="text-xl font-bold text-green-700 mb-4">
+          What is CareerCraft?
+        </h3>
+        <p class="text-gray-700 mb-6">
+          CareerCraft uses AI to match job descriptions with candidate profiles, helping recruiters find perfect fits faster.
+        </p>
+        <button class="px-4 py-2 bg-green-700 text-white rounded hover:bg-green-800" onclick="toggleModal('infoModal')">
+          Close
+        </button>
+      </div>
+    </div>
+    <script>
+      function toggleModal(id) {
+      const modal = document.getElementById(id);
+      modal.classList.toggle("hidden");
+      }
+    </script>
   </div>
 </body>
 </html>

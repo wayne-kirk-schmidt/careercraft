@@ -1,0 +1,42 @@
+[
+  {
+    "businessName": "Acme Financial",
+    "positionName": "Director Consultant",
+    "positionUrl": "https://acme.com/careers/director-consultant",
+    "location": "Spain",
+    "seniority": "Senior",
+    "uniqueKey": "Acme Financial-Spain-Director Consultant-Senior-https://acme.com/careers/director-consultant"
+  },
+  {
+    "businessName": "Nova Health",
+    "positionName": "Lead Operations Lead",
+    "positionUrl": "https://novahealth.org/careers/lead-operations-lead",
+    "location": "Denmark",
+    "seniority": "VP",
+    "uniqueKey": "Nova Health-Denmark-Lead Operations Lead-VP-https://novahealth.org/careers/lead-operations-lead"
+  },
+  {
+    "businessName": "EcoTrans Logistics",
+    "positionName": "Junior Route Analyst",
+    "positionUrl": "https://ecotranslog.com/careers/junior-route-analyst",
+    "location": "France",
+    "seniority": "Intern",
+    "uniqueKey": "EcoTrans Logistics-France-Junior Route Analyst-Intern-https://ecotranslog.com/careers/junior-route-analyst"
+  },
+  {
+    "businessName": "BrightEdu",
+    "positionName": "Director Academic Coach",
+    "positionUrl": "https://brightedu.org/careers/director-academic-coach",
+    "location": "New Zealand",
+    "seniority": "Lead",
+    "uniqueKey": "BrightEdu-New Zealand-Director Academic Coach-Lead-https://brightedu.org/careers/director-academic-coach"
+  },
+  {
+    "businessName": "SkyTech Solutions",
+    "positionName": "Mid Software Engineer",
+    "positionUrl": "https://skytech.io/careers/mid-software-engineer",
+    "location": "Denmark",
+    "seniority": "Junior",
+    "uniqueKey": "SkyTech Solutions-Denmark-Mid Software Engineer-Junior-https://skytech.io/careers/mid-software-engineer"
+  }
+]
